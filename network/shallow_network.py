@@ -2,10 +2,8 @@
 __author__ = 'Zhouhao Zeng'
 
 import torch
-from torch.autograd import Variable
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
 
 # Network for simple task (i.e. CartPole) with value based methods (i.e. DQN)
 class FCNet(nn.Module):

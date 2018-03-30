@@ -3,6 +3,7 @@ __author__ = 'Zhouhao Zeng'
 
 import numpy as np
 
+
 class Replay(object):
     def __init__(self, capacity, dtype=np.float32):
         self.capacity = capacity

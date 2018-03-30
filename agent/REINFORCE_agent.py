@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Zhouhao Zeng'
 
-from network import *
-from component import *
-from utils import *
 import torch
+from torch.autograd import Variable
 from torch.distributions import Categorical
 import numpy as np
 import time

@@ -5,6 +5,7 @@ import gym
 import numpy as np
 import sys
 
+
 class BasicTask(object):
     def __init__(self, max_steps=sys.maxsize, dtype=np.float32):
         self.steps = 0
@@ -27,12 +28,16 @@ class BasicTask(object):
 
 
 class ClassicalControl(BasicTask):
-    def __init__(self, name, seed=None, max_steps=sys.maxsize):
+    def __init__(self, name, seed=None, max_steps=sys.maxsize, initial_running_reward=0):
         BasicTask.__init__(self, max_steps)
         self.name = name
         self.env = gym.make(self.name)
         self.action_dim = self.env.action_space.n
         self.state_dim = self.env.observation_space.shape[0]
         self.success_threshold = self.env.spec.reward_threshold
+        self.initial_running_reward = initial_running_reward
         if seed:
             self.env.seed(seed)
+
+    def render(self):
+        self.env.render()
